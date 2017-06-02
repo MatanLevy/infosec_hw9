@@ -3,7 +3,7 @@ from scapy.all import *
 message = ''
 finished = False
 x = False
-counter = 1
+counter = 0
 
 def receive_message(port):
 	while not finished:
@@ -20,7 +20,6 @@ def on_packet(packet):
 	ack = tcp.ack
 	seq = tcp.seq
 	reserved = tcp.reserved
-	#print("srcport = {0} , flags = {1}, ack = {2}, seq = {3}, reserved = {4}".format(src_port,flags,ack,seq,reserved))
 	if (src_port == 65000 and flags == 18):
 		if not x:
 			x = True
@@ -31,11 +30,7 @@ def on_packet(packet):
 		if (ack == counter):
 			finished = True
 			message = ''.join(message)
-			#print(len(message))
-			message = message[:-1]
-			print(message)
 			message = ''.join(chr(int(message[i*8:i*8+8],2)) for i in range(len(message)//8))
-			#print(message)
 			return
 
 

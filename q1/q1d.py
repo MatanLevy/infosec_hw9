@@ -8,8 +8,9 @@ def on_packet(packet):
 	if not packet.haslayer(TCP):
 		return
 	ip = packet.getlayer(IP)
+	if (packet.haslayer(IP) and ip.dst == '10.0.2.15'):
+		return
 	tcp = packet.getlayer(TCP)
-	#print packet.summary()
 	flags = tcp.flags
 	if (SYN & flags):
 		response = IP(dst = ip.src, src = ip.dst) / TCP(sport = tcp.dport ,dport = tcp.sport,flags = "SA")
