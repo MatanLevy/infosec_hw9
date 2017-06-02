@@ -14,7 +14,6 @@ def on_packet(packet):
 	flags = tcp.flags
 	if (SYN & flags):
 		response = IP(dst = ip.src, src = ip.dst) / TCP(sport = tcp.dport ,dport = tcp.sport,flags = "SA")
-		print response.summary()
 		send(response)
 
 

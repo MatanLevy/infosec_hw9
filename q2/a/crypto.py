@@ -2,6 +2,8 @@ from Crypto import Random
 from Crypto.Cipher import AES
 import base64
 
+'''this file is based on this implementation : https://gist.github.com/dokenzy/7b64238424175742a8a1'''
+
 BS = 16
 pad = lambda s: s + (BS - len(s) % BS) * chr(BS - len(s) % BS).encode()
 unpad = lambda s: s[:-ord(s[len(s)-1:])]

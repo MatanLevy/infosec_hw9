@@ -1,0 +1,3 @@
+In dos attack we will probably not send a big amount of message from the same ip address,we dont want to know that we are the attackers.
+so in this case , that ip address change often this firewall wont work.
+the firewall depends on the fact that we blocked by ip address and if we can send big amount of messages from diffrent IP src address(we can even make it be random from the same computer) the firewall wont catch anything

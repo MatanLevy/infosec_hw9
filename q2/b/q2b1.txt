@@ -1,0 +1,1 @@
+just added the calculation of entropy and the condition with or logic.

@@ -1,0 +1,5 @@
+for the solution I used a dictonary data structure.
+for each key-ip address I kept value - list of times the syn was sent
+and each time a new syn is sent there is a check for this ip if the number of syn got in last minute was 15 or more and if so
+we block this IP and remove it from dict and also add it to blocked set of ip's so next time each message from this ip will be 
+blocked.

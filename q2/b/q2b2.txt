@@ -1,0 +1,4 @@
+I convert the string from string or char to string of binary(only 0/1) and sent it diving to triples(with 0 padding if needed)
+in julia part I made put everything in array of 0/1 and finaly converted it to the string 
+of course the packets filteted according to SYN and source port-65000 and data taken from reserved bits.
+more details about implementation can be found in the documentation.

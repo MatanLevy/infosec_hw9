@@ -1,0 +1,3 @@
+for using cytpto I took from the internet (github) a simple code dealing with encrypt/decrypt with AES and 
+padding/unpadding message. winston now just encrypt his message and send,julia decrypt it and can read.
+they both use same key the decided before so it can work.

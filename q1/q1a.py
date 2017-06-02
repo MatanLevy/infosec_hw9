@@ -12,7 +12,7 @@ def stealth_syn_scan(ip, ports, timeout):
 	for port in ports:
 		syn_packet = IP(dst = ip) / TCP(dport = port , flags = 'S')
 		answer = sr1(syn_packet, timeout = timeout)
-		if (answer is None) :
+		if ((answer is None) or (not answer.haslayer(TCP))) :
 			result.append("filtered")
 		else : 
 			flags = answer.getlayer(TCP).flags

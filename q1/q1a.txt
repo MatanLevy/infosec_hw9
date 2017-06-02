@@ -1,0 +1,6 @@
+the implementation is just sent SYN packet to all ip/port combination and check the response.
+in case given SYN/ACK we can say the port is open.
+in case given RST - the port is closed
+if no reply way given - the port is filtered.
+
+it calls stealth SYN scan beacuse we sent packet even from unknow host(ip address wat not declred and we could even cheat or make it be random so nobody can know who sent it)
